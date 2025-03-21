@@ -9,25 +9,16 @@ package edu.cmu.cs.cs214.rec04;
  * @author Nora Shoemaker
  */
 public class DelegationSortedIntList implements IntegerList {
-    // Private SortedIntList object for delegation
     private final SortedIntList sortedList;
-
-    // Counter to keep track of the total number of added elements
     private int totalAdded;
-
-    /**
-     * Constructs a new DelegationSortedIntList.
-     */
     public DelegationSortedIntList() {
-        this.sortedList = new SortedIntList(); // Initialize the internal list
-        this.totalAdded = 0; // Initialize the total added counter
+        this.sortedList = new SortedIntList();
+        this.totalAdded = 0; 
     }
 
     /**
-     * Adds the specified integer to the list and increments the totalAdded counter.
-     *
-     * @param num an integer to be added to the list
-     * @return true if the list is changed as a result of the call
+     * @param num 
+     * @return
      */
     @Override
     public boolean add(int num) {
@@ -39,11 +30,8 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     /**
-     * Adds all elements from the specified IntegerList to this list.
-     * Increments the totalAdded counter by the number of elements successfully added.
-     *
-     * @param list IntegerList containing elements to be added to the list
-     * @return true if the list is changed as a result of the call
+     * @param list IntegerList бөгөөд энэ жагсаалтад нэмэгдэх элементүүдийг агуулна
+     * @return жагсаалт өөрчлөгдсөн бол true
      */
     @Override
     public boolean addAll(IntegerList list) {
@@ -56,10 +44,8 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     /**
-     * Returns the integer at the specified position in this list.
-     *
-     * @param index index of the element to return
-     * @return the element at the specified position in this list
+     * @param index 
+     * @return 
      */
     @Override
     public int get(int index) {
@@ -67,10 +53,8 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     /**
-     * Removes the first occurrence of the specified element from the list.
-     *
-     * @param num an integer to be removed from the list, if present
-     * @return true if an element was removed as a result of this call
+     * @param num
+     * @return
      */
     @Override
     public boolean remove(int num) {
@@ -78,10 +62,8 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     /**
-     * Removes all elements in the specified IntegerList from this list.
-     *
-     * @param list IntegerList containing elements to be removed from this list
-     * @return true if the list changed as a result of the call
+     * @param list 
+     * @return 
      */
     @Override
     public boolean removeAll(IntegerList list) {
@@ -89,9 +71,7 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     /**
-     * Returns the number of elements in this list.
-     *
-     * @return the number of elements in this list
+     * @return 
      */
     @Override
     public int size() {
@@ -99,9 +79,7 @@ public class DelegationSortedIntList implements IntegerList {
     }
 
     /**
-     * Returns the total number of elements that were attempted to be added to the list.
-     *
-     * @return the total number of added elements
+     * @return 
      */
     public int getTotalAdded() {
         return totalAdded;
