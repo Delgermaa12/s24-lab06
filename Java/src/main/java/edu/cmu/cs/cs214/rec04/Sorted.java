@@ -9,9 +9,9 @@ import java.util.List;
  *
  * @author Nora Shoemaker
  */
-public class SortedIntList implements IntegerList {
+public class Sorted implements IntegerList {
     private final List<Integer> list;
-    public SortedIntList() {
+    public Sorted() {
         list = new ArrayList<>();
     }
 

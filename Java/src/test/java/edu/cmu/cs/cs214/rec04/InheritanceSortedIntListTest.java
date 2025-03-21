@@ -28,6 +28,7 @@ public class InheritanceSortedIntListTest {
         list1.add(4);
         list1.add(2);
         assertEquals(5, list1.getTotalAdded());
+
     }
 
     @Test
@@ -39,15 +40,16 @@ public class InheritanceSortedIntListTest {
         list1.add(2);
         assertEquals(5, list1.getTotalAdded());
 
+
         list2.add(3);
         list2.add(0);
         assertEquals(2, list2.getTotalAdded());
         list2.addAll(list1);
-        assertEquals(7, list2.getTotalAdded());
+        assertEquals(7 , list2.getTotalAdded());
     }
 
     /**
-     * @param list IntegerList to be printed out.
+     * @param list 
      */
     private void printList(InheritanceSortedIntList list) {
         for (int i = 0; i < list.size(); i++) {

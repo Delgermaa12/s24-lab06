@@ -1,5 +1,7 @@
 package edu.cmu.cs.cs214.rec04;
 
+
+
 /**
  * InheritanceSortedIntList -- a variant of a SortedIntList that keeps
  * count of the number of attempted element insertions (not to be confused
@@ -8,35 +10,44 @@ package edu.cmu.cs.cs214.rec04;
  *
  * @author Nora Shoemaker
  */
-public class InheritanceSortedIntList extends SortedIntList {
-    private int totalAdded; 
+public class InheritanceSortedIntList extends SortedIntList{
+    private int totalAdded;
     public InheritanceSortedIntList() {
         super();
-        totalAdded = 0;
+        this.totalAdded = 0;
     }
 
     /**
-     * add niit nemegsen elementiin toog toolno.
-     * @param num 
-     * @return jagsaalt uurchlgdsun bol true
+     * @param element 
+     * @return 
      */
     @Override
-    public boolean add(int num) {
-        totalAdded++;
-        return super.add(num);
-    }
-
-    /** @param integerList IntegerList jagsaaltiig nemne
-     * @return
-     */
-    @Override
-    public boolean addAll(IntegerList integerList) {
-        totalAdded += integerList.size();
-        return super.addAll(integerList);
+    public boolean add(int element) {
+        boolean isAdded = super.add(element);
+        if (isAdded) {
+            totalAdded++;
+        }
+        return isAdded;
     }
 
     /**
-     * @return
+     * @param other 
+     * @return 
+     */
+    @Override
+    public boolean addAll(IntegerList other) {
+        int countBefore = totalAdded; 
+        boolean isAdded = super.addAll(other);
+        if (isAdded) {
+             totalAdded = countBefore + other.size(); 
+        }
+            return isAdded;
+    }
+
+
+
+    /**
+     * @return 
      */
     public int getTotalAdded() {
         return totalAdded;

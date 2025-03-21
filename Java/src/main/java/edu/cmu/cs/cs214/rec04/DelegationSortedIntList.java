@@ -9,10 +9,10 @@ package edu.cmu.cs.cs214.rec04;
  * @author Nora Shoemaker
  */
 public class DelegationSortedIntList implements IntegerList {
-    private final SortedIntList sortedList;
+    private final Sorted sortedList;
     private int totalAdded;
     public DelegationSortedIntList() {
-        this.sortedList = new SortedIntList();
+        this.sortedList = new Sorted();
         this.totalAdded = 0; 
     }
 
